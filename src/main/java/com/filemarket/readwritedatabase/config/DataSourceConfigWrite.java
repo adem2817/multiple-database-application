@@ -1,8 +1,6 @@
 package com.filemarket.readwritedatabase.config;
 
 import com.zaxxer.hikari.HikariDataSource;
-import org.hibernate.jpa.HibernatePersistenceProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
@@ -39,8 +37,8 @@ public class DataSourceConfigWrite {
     }
 
     @Primary
-    @ConfigurationProperties("spring.jpa.write")
     @Bean(name = "writeJpaProperties")
+    @ConfigurationProperties("spring.jpa.write")
     public JpaProperties jpaProp () {
         return new JpaProperties();
     }
