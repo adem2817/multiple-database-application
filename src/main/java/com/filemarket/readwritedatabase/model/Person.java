@@ -11,16 +11,18 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+@Table(name = "Person")
 public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="Id")
     private Long id;
 
-    @Column(columnDefinition = "name")
+    @Column(name = "name")
     private String name;
 
-    @Column(columnDefinition = "phone")
+    @Column(name = "phone")
     private String phoneNumber;
 
 }
